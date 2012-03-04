@@ -18,12 +18,6 @@ See [TomDoc](https://github.com/mojombo/tomdoc) for more information about
 the TomDoc format.
 
 
-## Limitations
-
-Current implmentation doesn't yet support named parameters. Hopefully
-that will be fixed soon in an upcoming release --any volunteers?
-
-
 ## Installation
 
     $ gem install tomparse
