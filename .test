@@ -1,0 +1,11 @@
+Test.run :default do |run|
+  run.files << 'test/test_*.rb'
+
+  $:.unshift('test')
+  $:.unshift('lib')
+
+  require 'brass'
+  require 'microtest/testunit'
+  require 'microtest/assertions'
+end
+

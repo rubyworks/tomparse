@@ -1,0 +1,3 @@
+TomParse is a Ruby TomDoc parser. It contains no other functionality
+than the ability to take a comment and parse it in accordance to the
+TomDoc standard.

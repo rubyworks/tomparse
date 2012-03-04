@@ -1,0 +1,9 @@
+#!mast .ruby .yardopts lib test [A-Z]*.*
+.ruby
+lib/tomparse.rb
+lib/tomparse.yml
+test/helper.rb
+test/test_tomdoc.rb
+LICENSE.txt
+HISTORY.md
+README.md
