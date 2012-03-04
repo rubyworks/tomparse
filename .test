@@ -4,7 +4,6 @@ Test.run :default do |run|
   $:.unshift('test')
   $:.unshift('lib')
 
-  require 'brass'
   require 'microtest/testunit'
   require 'microtest/assertions'
 end
