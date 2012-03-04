@@ -291,7 +291,7 @@ module TomParse
         indent = line.scan(/^\s*/)[0].to_s.size
 
         if last_indent && indent > last_indent
-          args.last.description += line.squeeze(" ")
+          args.last.description << line.squeeze(" ")
         else
           param, desc = line.split(" - ")
           args << Argument.new(param.strip, desc.strip) if param && desc
@@ -401,7 +401,7 @@ module TomParse
         indent = line.scan(/^\s*/)[0].to_s.size
 
         if last_indent && indent > last_indent
-          args.last.description += line.squeeze(" ")
+          args.last.description << line.squeeze(" ")
         else
           param, desc = line.split(" - ")
           args << Argument.new(param.strip, desc.strip) if param && desc
@@ -466,7 +466,7 @@ module TomParse
         indent = line.scan(/^\s*/)[0].to_s.size
 
         if last_indent && indent > last_indent
-          args.last.description += line.squeeze(" ")
+          args.last.description << line.squeeze(" ")
         else
           param, desc = line.split(" - ")
           opts << Option.new(param.strip, desc.strip) if param && desc
