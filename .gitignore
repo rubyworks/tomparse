@@ -1,5 +1,6 @@
 .yardoc
 dist
+log
 pkg
 web
 Gemfile.lock
