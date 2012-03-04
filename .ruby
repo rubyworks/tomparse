@@ -36,7 +36,7 @@ revision: 0
 created: '2012-03-04'
 summary: TomDoc parser for Ruby
 title: TomParse
-version: 0.1.0
+version: 0.2.0
 name: tomparse
 description: ! 'TomParse is a Ruby TomDoc parser. It contains no other functionality
 
