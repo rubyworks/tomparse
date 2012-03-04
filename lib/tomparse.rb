@@ -8,33 +8,6 @@ module TomParse
     TomDoc.new(comment, parse_options)
   end
 
-  # Raised when comment can't be parsed, which means it's most
-  # likely not valid TomDoc.
-  #
-  class ParseError < RuntimeError
-    # Create new ParseError object.
-    #
-    # doc - document string
-    #
-    def initialize(doc)
-      @doc = doc
-    end
-
-    # Provide access to document string.
-    #
-    # Returns String.
-    def message
-      @doc
-    end
-
-    # Provide access to document string.
-    #
-    # Returns String.
-    def to_s
-      @doc
-    end
-  end
-
   # Encapsulate parsed tomdoc documentation.
   #
   # TODO: Currently uses lazy evaluation, eventually this should
@@ -132,7 +105,7 @@ module TomParse
       end
 
       # put first line back
-      lines.unshift(first.sub(/^\s*/,''))
+      lines.unshift(first.sub(/^\s*/,'')) if first
 
       lines.compact.join("\n")
     end
@@ -306,7 +279,7 @@ module TomParse
     # Parse arguments section. Arguments occur subsequent to
     # the description.
     #
-    # section - String containing agument definitions.
+    # section - String containing argument definitions.
     #
     # Returns nothing.
     def parse_arguments(section)
@@ -382,7 +355,8 @@ module TomParse
         end
       end
 
-      @returns, @raises = returns, raises
+      @returns.concat(returns)
+      @raises.concat(raises)
     end
 
     # Parse signature section.
@@ -445,7 +419,11 @@ module TomParse
   #
   class Argument
 
-    attr_accessor :name, :description
+    attr :name
+
+    attr :description
+
+    attr :options
 
     # Create new Argument object.
     #
@@ -454,7 +432,7 @@ module TomParse
     #
     def initialize(name, description = '')
       @name = name.to_s.intern
-      @description = description
+      parse(description)
     end
 
     # Is this an optional argument?
@@ -464,6 +442,95 @@ module TomParse
       @description.downcase.include? 'optional'
     end
 
+    # Parse arguments section. Arguments occur subsequent to
+    # the description.
+    #
+    # section - String containing argument definitions.
+    #
+    # Returns nothing.
+    def parse(description)
+      desc = []
+      opts = []
+
+      lines = description.lines.to_a
+
+      until lines.empty? or /^\s+\:(\w+)\s+-\s+(.*?)$/ =~ lines.first
+        desc << lines.shift
+      end
+
+      opts = []
+      last_indent = nil
+
+      lines.each do |line|
+        next if line.strip.empty?
+        indent = line.scan(/^\s*/)[0].to_s.size
+
+        if last_indent && indent > last_indent
+          args.last.description += line.squeeze(" ")
+        else
+          param, desc = line.split(" - ")
+          opts << Option.new(param.strip, desc.strip) if param && desc
+        end
+
+        last_indent = indent
+      end
+
+      @description = desc.join
+      @options     = opts
+    end
+
+  end
+
+  # Encapsulate a named parameter.
+  #
+  class Option
+
+    attr_accessor :name, :description
+
+    # Create new Argument object.
+    #
+    # name        - name of option
+    # description - option description
+    #
+    def initialize(name, description = '')
+      @name = name.to_s.intern
+      @description = description
+    end
+
+    # Is this a required option?
+    #
+    # Returns Boolean.
+    def required?
+      @description.downcase.include? 'required'
+    end
+
+  end
+
+  # Raised when comment can't be parsed, which means it's most
+  # likely not valid TomDoc.
+  #
+  class ParseError < RuntimeError
+    # Create new ParseError object.
+    #
+    # doc - document string
+    #
+    def initialize(doc)
+      @doc = doc
+    end
+
+    # Provide access to document string.
+    #
+    # Returns String.
+    def message
+      @doc
+    end
+
+    # Provide access to document string.
+    #
+    # Returns String.
+    def to_s
+      @doc
+    end
   end
 
 end
