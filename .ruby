@@ -9,19 +9,13 @@ copyrights:
   year: '2012'
   license: BSD-2-Clause
 requirements:
-- name: minitest
-  version: 1.5+
+- name: microtest
   groups:
   - test
   development: true
-- name: turn
+- name: detroit
   groups:
-  - test
-  development: true
-- name: rake
-  version: 0.9+
-  groups:
-  - development
+  - build
   development: true
 dependencies: []
 alternatives: []
