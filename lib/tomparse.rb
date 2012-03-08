@@ -419,11 +419,11 @@ module TomParse
   #
   class Argument
 
-    attr :name
+    attr_accessor :name
 
-    attr :description
+    attr_accessor :description
 
-    attr :options
+    attr_accessor :options
 
     # Create new Argument object.
     #
@@ -485,7 +485,9 @@ module TomParse
   #
   class Option
 
-    attr_accessor :name, :description
+    attr_accessor :name
+
+    attr_accessor :description
 
     # Create new Argument object.
     #
