@@ -1,7 +1,7 @@
 # Release History
 
 
-## 0.2.0 / 2012-03-5
+## 0.2.0 / 2012-03-07
 
 This release improves support of TomDoc, in particular, named parameters. It also
 fixes a bug with appending to argument and option descriptions.
