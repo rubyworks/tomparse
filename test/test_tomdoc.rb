@@ -72,6 +72,17 @@ comment4
     field - A field name.
 comment5
 
+
+    @comment6 = TomParse::TomDoc.new(<<comment6)
+    # Duplicate some text an abitrary number of times.
+    #
+    # Examples
+    #
+    #   def multiplex(str, length)
+    #     str * length
+    #   end
+comment6
+
   end
 
   test "knows when TomDoc is invalid" do
@@ -118,8 +129,13 @@ comment5
   end
 
   test "knows each example" do
-    assert_equal "multiplex('Bo', 2)\n  # => 'BoBo'",
+    assert_equal "multiplex('Bo', 2)\n# => 'BoBo'",
       @comment.examples[1].to_s
+  end
+
+  test "correctly handles whitespace with examples" do
+    assert_equal "def multiplex(str, length)\n  str * length\nend",
+      @comment6.examples[0].to_s
   end
 
   test "knows what to do when there are no examples" do

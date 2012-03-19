@@ -312,11 +312,11 @@ module TomParse
     def parse_examples(section, sections)
       examples = []
 
-      section = section.sub('Examples', '').strip
+      section = section.sub('Examples', '').gsub(/^\s{2}/,'')
 
       examples << section unless section.empty?
       while sections.first && sections.first !~ /^\S/
-        examples << sections.shift.strip
+        examples << sections.shift.gsub(/^\s{2}/,'')
       end
 
       @examples = examples
