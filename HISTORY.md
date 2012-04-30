@@ -1,5 +1,14 @@
 # Release History
 
+## 0.2.1 / 2012-04-30
+
+This release fixes indention with multi-line examples.
+
+Changes:
+
+* Correctly indent multiline code examples.
+* Swtich to Citron for testing.
+
 
 ## 0.2.0 / 2012-03-07
 

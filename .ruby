@@ -9,7 +9,7 @@ copyrights:
   year: '2012'
   license: BSD-2-Clause
 requirements:
-- name: microtest
+- name: citron
   groups:
   - test
   development: true
@@ -25,10 +25,18 @@ repositories:
   scm: git
   name: upstream
 resources:
-  home: http://rubyworks.github.com/tomparse
-  docs: http://rubydoc.info/gems/tomparse
-  code: http://github.com/rubyworks/tomparse
-  mail: http://groups.google.com/groups/rubyworks-mailinglist
+- uri: http://rubyworks.github.com/tomparse
+  name: home
+  type: home
+- uri: http://rubydoc.info/gems/tomparse
+  name: docs
+  type: doc
+- uri: http://github.com/rubyworks/tomparse
+  name: code
+  type: code
+- uri: http://groups.google.com/groups/rubyworks-mailinglist
+  name: mail
+  type: mail
 extra: {}
 load_path:
 - lib
@@ -36,7 +44,7 @@ revision: 0
 created: '2012-03-04'
 summary: TomDoc parser for Ruby
 title: TomParse
-version: 0.2.0
+version: 0.2.1
 name: tomparse
 description: ! 'TomParse is a Ruby TomDoc parser. It contains no other functionality
 
@@ -44,4 +52,4 @@ description: ! 'TomParse is a Ruby TomDoc parser. It contains no other functiona
 
   TomDoc standard.'
 organization: rubyworks
-date: '2012-03-04'
+date: '2012-04-30'
