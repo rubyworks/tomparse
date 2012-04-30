@@ -34,9 +34,12 @@ resources:
 - uri: http://github.com/rubyworks/tomparse
   name: code
   type: code
-- uri: http://groups.google.com/groups/rubyworks-mailinglist
+- uri: http://groups.google.com/group/rubyworks-mailinglist
   name: mail
   type: mail
+- uri: http://chat.us.freenode.net/rubyworks
+  name: chat
+  type: chat
 extra: {}
 load_path:
 - lib
