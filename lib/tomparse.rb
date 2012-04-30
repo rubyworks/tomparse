@@ -97,7 +97,7 @@ module TomParse
 
       space = spaces.min || 0
       lines = lines.map do |line|
-        if line.empty?
+        if line.strip.empty?
           line.strip
         else
           line[space..-1]
