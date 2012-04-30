@@ -3,8 +3,5 @@ Test.run :default do |run|
 
   $:.unshift('test')
   $:.unshift('lib')
-
-  require 'microtest/testunit'
-  require 'microtest/assertions'
 end
 
