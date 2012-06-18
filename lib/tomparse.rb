@@ -262,6 +262,9 @@ module TomParse
       return @parsed
     end
 
+    # Recognized description status.
+    TOMDOC_STATUS = ['Internal', 'Public', 'Deprecated']
+
     # Parse description.
     #
     # section - String containig description.
@@ -270,7 +273,11 @@ module TomParse
     def parse_description(section)
       if md = /^([A-Z]\w+\:)/.match(section)
         @status      = md[1].chomp(':')
-        @description = md.post_match.strip
+        if TOMDOC_STATUS.include?(@status)
+          @description = md.post_match.strip
+        else
+          @description = section.strip
+        end
       else
         @description = section.strip
       end   
