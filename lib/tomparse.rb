@@ -293,18 +293,22 @@ module TomParse
       args = []
       last_indent = nil
 
-      section.split("\n").each do |line|
+      section.lines.each do |line|
         next if line.strip.empty?
         indent = line.scan(/^\s*/)[0].to_s.size
 
-        if last_indent && indent > last_indent
-          args.last.description << line.squeeze(" ")
+        if last_indent && indent > 0 && indent >= last_indent
+          args.last.description << "\r\n" + line
         else
           param, desc = line.split(" - ")
           args << Argument.new(param.strip, desc.strip) if param && desc
         end
 
         last_indent = indent
+      end
+
+      args.each do |arg|
+        arg.parse(arg.description)
       end
 
       @arguments = args
@@ -462,7 +466,7 @@ module TomParse
       lines = description.lines.to_a
 
       until lines.empty? or /^\s+\:(\w+)\s+-\s+(.*?)$/ =~ lines.first
-        desc << lines.shift
+        desc << lines.shift.chomp.squeeze(" ")
       end
 
       opts = []
@@ -473,10 +477,10 @@ module TomParse
         indent = line.scan(/^\s*/)[0].to_s.size
 
         if last_indent && indent > last_indent
-          args.last.description << line.squeeze(" ")
+          opts.last.description << line.squeeze(" ")
         else
-          param, desc = line.split(" - ")
-          opts << Option.new(param.strip, desc.strip) if param && desc
+          param, d = line.split(" - ")
+          opts << Option.new(param.strip, d.strip) if param && d
         end
 
         last_indent = indent
