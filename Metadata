@@ -1,0 +1,11 @@
+---
+name: tomparse
+created: 2012-03-04
+
+summary: TomDoc parser for Ruby
+
+repositories:
+  upstream: git@github.com:rubyworks/tomparse.git
+
+organization: Rubyworks
+

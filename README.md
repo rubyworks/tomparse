@@ -1,4 +1,4 @@
-# TomParse
+# <span class="ititle">TomParse</span>
 
 [Website](http://github.com/rubyworks/tomparse) /
 [Report Issue](http://github.com/rubyworks/tomparse/issues) /
@@ -10,15 +10,19 @@
 
 ## Description
 
+<span class="idescription">
 TomParse is TomDoc parser for Ruby. It provides no other functionality
 than to take a code comment and parse it in to a convenient object-oriented
 structure in accordance with TomDoc standard.
+</span>
 
 See [TomDoc](https://github.com/mojombo/tomdoc) for more information about
 the TomDoc format.
 
 
 ## Installation
+
+TomParse is available as a Ruby gem.
 
     $ gem install tomparse
 
@@ -65,6 +69,8 @@ looks something like this:
 <li><a class="iresource" href="http://rubyworks.github.com/tomparse" name="home">Homepage</a></li>
 <li><a class="iresource" href="http://github.com/rubyworks/tomparse" name="code">Source Code</a> (Github)</li>
 <li><a class="iresource" href="http://rubydoc.info/gems/tomparse/frames" name="docs">API Reference</a></li>
+<li><a class="iresource" href="http://groups.google.com/group/rubyworks-mailinglist" name="mail">Mailiing List</a></li>
+<li><a class="iresource" href="http://chat.us.freenode.net/rubyworks" name="chat">IRC Chat</a></li>
 <li><a class="irepository" href="http://github.com/rubyworks/tomparse/tomparse.git" name="upstream">Master Git Repo</a></li>
 </ul>
 

@@ -1,58 +1,60 @@
 ---
-source:
-- meta
+type: ruby
+revision: 2013
+sources:
+- Metadata
+- README.md
+- VERSION
 authors:
-- name: Trans
+- name: trans
   email: transfire@gmail.com
+organizations:
+- name: Rubyworks
+requirements:
+- groups:
+  - test
+  version: 0+
+  name: citron
+- groups:
+  - build
+  version: 0+
+  name: detroit
+conflicts: []
+alternatives: []
+resources:
+- type: home
+  uri: http://rubyworks.github.com/tomparse
+  label: Homepage
+- type: code
+  uri: http://github.com/rubyworks/tomparse
+  label: Source Code
+- type: api
+  uri: http://rubydoc.info/gems/tomparse/frames
+  label: API Reference
+- type: mail
+  uri: http://groups.google.com/group/rubyworks-mailinglist
+  label: Mailiing List
+- type: chat
+  uri: http://chat.us.freenode.net/rubyworks
+  label: IRC Chat
+repositories:
+- name: upstream
+  scm: git
+  uri: git@github.com:rubyworks/tomparse.git
+categories: []
+load_path:
+- lib
 copyrights:
 - holder: Rubyworks
   year: '2012'
-  license: BSD-2-Clause
-requirements:
-- name: citron
-  groups:
-  - test
-  development: true
-- name: detroit
-  groups:
-  - build
-  development: true
-dependencies: []
-alternatives: []
-conflicts: []
-repositories:
-- uri: git@github.com:rubyworks/tomparse.git
-  scm: git
-  name: upstream
-resources:
-- uri: http://rubyworks.github.com/tomparse
-  name: home
-  type: home
-- uri: http://rubydoc.info/gems/tomparse
-  name: docs
-  type: doc
-- uri: http://github.com/rubyworks/tomparse
-  name: code
-  type: code
-- uri: http://groups.google.com/group/rubyworks-mailinglist
-  name: mail
-  type: mail
-- uri: http://chat.us.freenode.net/rubyworks
-  name: chat
-  type: chat
-extra: {}
-load_path:
-- lib
-revision: 0
+name: tomparse
+title: TomParse
 created: '2012-03-04'
 summary: TomDoc parser for Ruby
-title: TomParse
+description: ! 'TomParse is TomDoc parser for Ruby. It provides no other functionality
+
+  than to take a code comment and parse it in to a convenient object-oriented
+
+  structure in accordance with TomDoc standard.'
 version: 0.2.2
-name: tomparse
-description: ! 'TomParse is a Ruby TomDoc parser. It contains no other functionality
-
-  than the ability to take a comment and parse it in accordance to the
-
-  TomDoc standard.'
-organization: rubyworks
-date: '2012-04-30'
+date: '2012-12-07'
