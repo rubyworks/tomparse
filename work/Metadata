@@ -1,0 +1,32 @@
+---
+name: tomparse
+version: 0.2.2
+
+title: TomParse
+summary: TomDoc parser for Ruby
+
+description:
+  TomParse is a Ruby TomDoc parser. It contains no other functionality
+  than the ability to take a comment and parse it in accordance to the
+  TomDoc standard.
+
+organization: Rubyworks
+
+resources:
+  home: http://rubyworks.github.com/tomparse
+  docs: http://rubydoc.info/gems/tomparse
+  code: http://github.com/rubyworks/tomparse
+  mail: http://groups.google.com/group/rubyworks-mailinglist
+  chat: http://chat.us.freenode.net/rubyworks
+
+repositories:
+  upstream: git@github.com:rubyworks/tomparse.git
+
+requirements:
+  - citron  (test)
+  - detroit (build)
+
+created: 2012-03-04
+
+copyrights:
+  - 2012 Rubyworks (BSD-2-Clause)

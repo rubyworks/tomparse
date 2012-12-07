@@ -10,11 +10,10 @@
 
 ## Description
 
-<span class="idescription">
-TomParse is TomDoc parser for Ruby. It provides no other functionality
-than to take a code comment and parse it in to a convenient object-oriented
-structure in accordance with TomDoc standard.
-</span>
+TomParse is a <span class="isummary">TomDoc parser for Ruby</span>. 
+<span class="idescription">It provides no other functionality than
+to take a code comment and parse it in to a convenient object-oriented
+structure in accordance with TomDoc standard.</span>
 
 See [TomDoc](https://github.com/mojombo/tomdoc) for more information about
 the TomDoc format.
@@ -24,7 +23,7 @@ the TomDoc format.
 
 TomParse is available as a Ruby gem.
 
-    $ gem install tomparse
+    $ gem install <a href="http://rubygems.org/gems/tomparse" class="iname">tomparse</a>
 
 
 ## Instruction
@@ -90,7 +89,7 @@ looks something like this:
 ## Authors
 
 <ul>
-<li class="vcard iauthor">
+<li class="iauthor vcard">
   <span class="nickname">trans</span>
   <span>&lt;<a class="email" href="mailto:transfire@gmail.com">transfire@gmail.com</a>&gt;</span>
   <br/><a class="url" href="http://trans.gihub.com/">http://trans.github.com/</a>
@@ -101,10 +100,14 @@ looks something like this:
 ## Copyright & License
 
 <div class="icopyright">
-<p>Copyright (c) <span class="year">2012</span> <span class="holder">Rubyworks</span></p>
+<p>Copyright (c) <span class="year">2012</span> <a href="http://rubyworks.github.com" class="holder">Rubyworks</a></p>
 
-<p>TomParse is distributable under the terms of the <a href="http://www.spdx.org/licenses/BSD-2-Clause" rel="license">BSD-2-Clause</a> license.</p>
+<p>TomParse is distributable under the terms of the <a href="http://www.spdx.org/licenses/BSD-2-Clause" class="license">BSD-2-Clause</a> license.</p>
 
 <p>See LICENSE.txt for details.</p>
 </div>
+
+<p class="iorganization">
+TomParse is <a href="http://rubyworks.github.com" class="name website">Rubyworks</a> project originally created on <span class="icreated">2012-03-04</span>.
+<p>
 
