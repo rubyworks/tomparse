@@ -59,11 +59,46 @@ looks something like this:
     end
 
 
-## License
+## Resources
 
-Copyright (c) 2012 Rubyworks
+<ul>
+<li><a class="iresource" href="http://rubyworks.github.com/tomparse" name="home">Homepage</a></li>
+<li><a class="iresource" href="http://github.com/rubyworks/tomparse" name="code">Source Code</a> (Github)</li>
+<li><a class="iresource" href="http://rubydoc.info/gems/tomparse/frames" name="docs">API Reference</a></li>
+<li><a class="irepository" href="http://github.com/rubyworks/tomparse/tomparse.git" name="upstream">Master Git Repo</a></li>
+</ul>
 
-TomParse is distributable under the terms of the *BSD-2-Clause* license.
+
+## Requirements
+
+<ul>
+<li class="irequirement">
+  <a class="name" href="http://rubyworks.github.com/qed/">citron</a> <span class="version"></span> <span class="groups">(test)</span>
+</li>
+<li class="irequirement">
+  <a class="name" href="http://rubyworks.github.com/ae/">detroit</a> <span class="version"></span> <span class="groups">(build)</span>
+</li>
+</ul>
+
+
+## Authors
+
+<ul>
+<li class="vcard iauthor">
+  <div class="nickname">trans</div>
+  <div><a class="email" href="mailto:transfire@gmail.com">transfire@gmail.com</a></div>
+  <div><a class="url" href="http://trans.gihub.com/">http://trans.github.com/</a></div>
+</li>
+</ul>
+
+
+## Copyright & License
+
+<div class="icopyright">
+Copyright (c) <span class="year">2012</span> <span class="holder">Rubyworks</span>
+
+TomParse is distributable under the terms of the <a href="http://www.spdx.org/licenses/BSD-2-Clause" rel="license">BSD-2-Clause</a> license.
 
 See LICENSE.txt for details.
+</div>
 
