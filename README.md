@@ -85,9 +85,9 @@ looks something like this:
 
 <ul>
 <li class="vcard iauthor">
-  <div class="nickname">trans</div>
-  <div><a class="email" href="mailto:transfire@gmail.com">transfire@gmail.com</a></div>
-  <div><a class="url" href="http://trans.gihub.com/">http://trans.github.com/</a></div>
+  <span class="nickname">trans</span>
+  <span>&lt;<a class="email" href="mailto:transfire@gmail.com">transfire@gmail.com</a>&gt;</span>
+  <br/><a class="url" href="http://trans.gihub.com/">http://trans.github.com/</a>
 </li>
 </ul>
 
@@ -95,10 +95,10 @@ looks something like this:
 ## Copyright & License
 
 <div class="icopyright">
-Copyright (c) <span class="year">2012</span> <span class="holder">Rubyworks</span>
+<p>Copyright (c) <span class="year">2012</span> <span class="holder">Rubyworks</span></p>
 
-TomParse is distributable under the terms of the <a href="http://www.spdx.org/licenses/BSD-2-Clause" rel="license">BSD-2-Clause</a> license.
+<p>TomParse is distributable under the terms of the <a href="http://www.spdx.org/licenses/BSD-2-Clause" rel="license">BSD-2-Clause</a> license.</p>
 
-See LICENSE.txt for details.
+<p>See LICENSE.txt for details.</p>
 </div>
 
