@@ -29,7 +29,7 @@ TomParse is available as a Ruby gem.
 
 ### Usage
 
-The primay interface is the `TomParse.parse` method. It will parse the
+The primary interface is the `TomParse.parse` method. It will parse the
 comment and return a `TomParse::TomDoc` instance.
 
     TomParse.parse(comment)  #=> TomParse::TomDoc
@@ -47,7 +47,7 @@ for more details on this.
 If you are unfamiliar with TomDoc, an example TomDoc comment for a method
 looks something like this:
 
-    # Duplicate some text an abitrary number of times.
+    # Duplicate some text an arbitrary number of times.
     #
     # text  - The String to be duplicated.
     # count - The Integer number of times to duplicate the text.
@@ -96,7 +96,7 @@ looks something like this:
 
 TomParse is copyrighted open-source software.
 
-**Copyright (c) 2012 [Rubyworks](http://rubyworks.github.com). All rights reserved.
+**Copyright (c) 2012 [Rubyworks](http://rubyworks.github.com). All rights reserved.**
 
 TomParse is distributable under the terms of the [BSD-2-Clause]((http://www.spdx.org/licenses/BSD-2-Clause) license.
 
