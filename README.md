@@ -13,10 +13,8 @@
 
 TomParse is a TomDoc parser for Ruby. It provides no other functionality than
 to take a code comment and parse it in to a convenient object-oriented
-structure in accordance with TomDoc standard.
-
-See [TomDoc](https://github.com/mojombo/tomdoc) for more information about
-the TomDoc format.
+structure in accordance with TomDoc standard. See [TomDoc](https://github.com/mojombo/tomdoc)
+for more information about the TomDoc format.
 
 
 ## Instruction
@@ -60,6 +58,27 @@ looks something like this:
     def multiplex(text, count)
       text * count
     end
+
+### Extra Features
+
+Okay, we told a little white lie in the description. TomParse does take a tiny 
+bit of liberty with the specification to offer up some additional documentation
+goodness. In particular, TomParse recoginizes paragraphs starting with an all-caps
+word, followed by a colon and a space, as special tags. Here is an example:
+
+```ruby
+  # Method to do something.
+  #
+  # TODO: This is a todo note.
+  #
+  # Returns nothing.
+  def dosomething
+    ...
+```
+
+When this is parsed the TomDoc instance will have a `tags` property containing,
+`{'todo'=>'This is a todo note.'}`, rather then adding the TODO line in with
+the description.
 
 
 ## Resources
