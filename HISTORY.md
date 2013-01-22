@@ -1,5 +1,17 @@
 # Release History
 
+## 0.3.0 / 2012-01-21
+
+This release fixes a bug which prevented descriptions from having
+multiple paragraphs. In addition it adds support for section tags.
+See the README for more information of tags.
+
+Changes:
+
+* Fix multi-paragraph description parsing.
+* Add support for tags.
+
+
 ## 0.2.1 / 2012-04-30
 
 This release fixes indention with multi-line examples.
