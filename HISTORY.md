@@ -4,7 +4,7 @@
 
 This release fixes a bug which prevented descriptions from having
 multiple paragraphs. In addition it adds support for section tags.
-See the README for more information of tags.
+See the README for more information on tags.
 
 Changes:
 
