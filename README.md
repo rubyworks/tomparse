@@ -76,9 +76,8 @@ word, followed by a colon and a space, as special tags. Here is an example:
     ...
 ```
 
-When this is parsed the TomDoc instance will have a `tags` property containing,
-`{'todo'=>'This is a todo note.'}`, rather then adding the TODO line in with
-the description.
+When this is parsed, rather then lumping the TODO line in with the description,
+the TomDoc instance will have a `tags` property containing `{'todo'=>'This is a todo note.'}`.
 
 
 ## Resources
@@ -115,7 +114,7 @@ the description.
 
 TomParse is copyrighted open-source software.
 
-**Copyright (c) 2012 [Rubyworks](http://rubyworks.github.com). All rights reserved.**
+Copyright (c) 2012 [Rubyworks](http://rubyworks.github.com). All rights reserved.
 
 TomParse is distributable under the terms of the [BSD-2-Clause]((http://www.spdx.org/licenses/BSD-2-Clause) license.
 
