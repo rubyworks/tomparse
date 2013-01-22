@@ -1,0 +1,3 @@
+TomParse provides no other functionality than to take a code comment
+and parse it in to a convenient object-oriented structure in accordance
+with TomDoc standard.

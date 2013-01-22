@@ -1,4 +1,4 @@
-# <span class="ititle">TomParse</span>
+# TomParse
 
 [Website](http://github.com/rubyworks/tomparse) /
 [Report Issue](http://github.com/rubyworks/tomparse/issues) /
@@ -6,27 +6,28 @@
 [Gem Page](http://rubygems.org/gems/tomparse)
 
 [![Build Status](https://secure.travis-ci.org/rubyworks/tomparse.png)](http://travis-ci.org/rubyworks/tomparse)
+[![Gem Version](https://badge.fury.io/rb/tomparse.png)](http://badge.fury.io/rb/tomparse)
 
 
 ## Description
 
-TomParse is a <span class="isummary">TomDoc parser for Ruby</span>. 
-<span class="idescription">It provides no other functionality than
+TomParse is a TomDoc parser for Ruby. It provides no other functionality than
 to take a code comment and parse it in to a convenient object-oriented
-structure in accordance with TomDoc standard.</span>
+structure in accordance with TomDoc standard.
 
 See [TomDoc](https://github.com/mojombo/tomdoc) for more information about
 the TomDoc format.
 
 
-## Installation
+## Instruction
+
+### Installation
 
 TomParse is available as a Ruby gem.
 
-    $ gem install <a href="http://rubygems.org/gems/tomparse" class="iname">tomparse</a>
+    $ gem install tomparse
 
-
-## Instruction
+### Usage
 
 The primay interface is the `TomParse.parse` method. It will parse the
 comment and return a `TomParse::TomDoc` instance.
@@ -41,8 +42,7 @@ the comment, such as `#arguments`, `#examples`, etc.
 See the [API documention](http://rubydoc.info/gems/tomparse/frames)
 for more details on this.
 
-
-## Example
+### Example
 
 If you are unfamiliar with TomDoc, an example TomDoc comment for a method
 looks something like this:
@@ -64,26 +64,12 @@ looks something like this:
 
 ## Resources
 
-<ul>
-<li><a class="iresource" href="http://rubyworks.github.com/tomparse" name="home">Homepage</a></li>
-<li><a class="iresource" href="http://github.com/rubyworks/tomparse" name="code">Source Code</a> (Github)</li>
-<li><a class="iresource" href="http://rubydoc.info/gems/tomparse/frames" name="docs">API Reference</a></li>
-<li><a class="iresource" href="http://groups.google.com/group/rubyworks-mailinglist" name="mail">Mailiing List</a></li>
-<li><a class="iresource" href="http://chat.us.freenode.net/rubyworks" name="chat">IRC Chat</a></li>
-<li><a class="irepository" href="http://github.com/rubyworks/tomparse/tomparse.git" name="upstream">Master Git Repo</a></li>
-</ul>
-
-
-## Requirements
-
-<ul>
-<li class="irequirement">
-  <a class="name" href="http://rubyworks.github.com/qed/">citron</a> <span class="version"></span> <span class="groups">(test)</span>
-</li>
-<li class="irequirement">
-  <a class="name" href="http://rubyworks.github.com/ae/">detroit</a> <span class="version"></span> <span class="groups">(build)</span>
-</li>
-</ul>
+* [Website](http://rubyworks.github.com/tomparse)
+* [Source Code](http://github.com/rubyworks/tomparse) (Github)
+* [API Reference](http://rubydoc.info/gems/tomparse/frames")
+* [Mailiing List](http://groups.google.com/group/rubyworks-mailinglist)
+* [IRC Chat](http://chat.us.freenode.net/rubyworks)
+* [Upstream Repo](http://github.com/rubyworks/tomparse/tomparse.git)
 
 
 ## Authors
@@ -97,17 +83,22 @@ looks something like this:
 </ul>
 
 
+## Development 
+
+### Requirements
+
+* [Citron](http://rubyworks.github.com/citron) (testing)
+* [AE](http://rubyworks.github.com/ae) (testing)
+* [Detroit](http://detroit.github.com/detroit) (building)
+
+
 ## Copyright & License
 
-<div class="icopyright">
-<p>Copyright (c) <span class="year">2012</span> <a href="http://rubyworks.github.com" class="holder">Rubyworks</a></p>
+TomParse is copyrighted open-source software.
 
-<p>TomParse is distributable under the terms of the <a href="http://www.spdx.org/licenses/BSD-2-Clause" class="license">BSD-2-Clause</a> license.</p>
+**Copyright (c) 2012 [Rubyworks](http://rubyworks.github.com). All rights reserved.
 
-<p>See LICENSE.txt for details.</p>
-</div>
+TomParse is distributable under the terms of the [BSD-2-Clause]((http://www.spdx.org/licenses/BSD-2-Clause) license.
 
-<p class="iorganization">
-TomParse is <a href="http://rubyworks.github.com" class="name website">Rubyworks</a> project originally created on <span class="icreated">2012-03-04</span>.
-<p>
+See LICENSE.txt for details.
 

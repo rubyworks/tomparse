@@ -1,21 +1,27 @@
 ---
-type: ruby
 revision: 2013
+type: ruby
 sources:
-- README.md
+- var
 - VERSION
 authors:
 - name: trans
   email: transfire@gmail.com
-organizations: []
+organizations:
+- name: Rubyworks
+  website: http://rubyworks.github.com
 requirements:
 - groups:
   - test
-  version: 0+
+  development: true
   name: citron
 - groups:
+  - test
+  development: true
+  name: ae
+- groups:
   - build
-  version: 0+
+  development: true
   name: detroit
 conflicts: []
 alternatives: []
@@ -28,28 +34,35 @@ resources:
   label: Source Code
 - type: api
   uri: http://rubydoc.info/gems/tomparse/frames
-  label: API Reference
+  label: API Guide
 - type: mail
   uri: http://groups.google.com/group/rubyworks-mailinglist
-  label: Mailiing List
+  label: Mailing List
 - type: chat
   uri: http://chat.us.freenode.net/rubyworks
-  label: IRC Chat
-repositories: []
-categories: []
-load_path:
-- lib
+  label: IRC Channel
+repositories:
+- name: upstream
+  scm: git
+  uri: http://github.com/rubyworks/tomparse/tomparse.git
+categories:
+- documentation
 copyrights:
 - holder: Rubyworks
   year: '2012'
   license: BSD-2-Clause
+customs: []
+paths:
+  lib:
+  - lib
+created: '2012-03-04'
 summary: TomDoc parser for Ruby
-description: ! 'It provides no other functionality than
-
-  to take a code comment and parse it in to a convenient object-oriented
-
-  structure in accordance with TomDoc standard.'
-name: tomparse
 title: TomParse
-version: 0.2.2
-date: '2012-12-07'
+name: tomparse
+description: ! 'TomParse provides no other functionality than to take a code comment
+
+  and parse it in to a convenient object-oriented structure in accordance
+
+  with TomDoc standard.'
+version: 0.3.0
+date: '2013-01-21'
