@@ -103,6 +103,28 @@ testcase TomParse::TomDoc do
 
   end
 
+  context "handles multiple paragraph descriptions" do
+
+    setup do
+      @comment = TomParse::TomDoc.new %{
+        # Has an initial paragraph.
+        #
+        # Has another paragraph in the description.
+        #
+        # Examples
+        #
+        #   def multiplex(str, length)
+        #     str * length
+        #   end
+      }
+    end
+
+    test "correctly handles multiple paragraphs" do
+      @comment.description.assert == "Has an initial paragraph.\n\nHas another paragraph in the description."
+    end
+
+  end
+
   context "handles whitespace in examples" do
 
     setup do

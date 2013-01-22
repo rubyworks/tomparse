@@ -31,10 +31,14 @@ module TomParse
       @raises           = []
       @signatures       = []
       @signature_fields = []
+      @tags             = {}
 
       parse unless @raw.empty?
     end
 
+    # Raw documentation text.
+    #
+    # Returns String of raw documentation text.
     def to_s
       @raw
     end
@@ -192,6 +196,15 @@ module TomParse
       }
     end
 
+    # A mapping of tags.
+    #
+    # Returns Hash of tags.
+    def tags
+      parsed {
+        @tags
+      }
+    end
+
     # Check if method is public.
     #
     # Returns true if method is public.
@@ -233,10 +246,23 @@ module TomParse
     def parse
       @parsed = true
 
-      @sections = tomdoc.split("\n\n")
-      sections  = @sections.dup
+      sections = tomdoc.split("\n\n")
 
       return false if sections.empty?
+
+      # The description is always the first section, but it may have
+      # multiple paragraphs. This routine collects those together.
+      desc = [sections.shift]
+      loop do
+         s = sections.first
+         break if s.nil?
+         break if s =~ /^\w+\s+\-/m
+         break if section_type(s) != nil
+         desc << sections.shift
+      end
+      sections = [desc.join("\n\n")] + sections
+  
+      @sections = sections.dup
 
       parse_description(sections.shift)
 
@@ -246,20 +272,45 @@ module TomParse
 
       current = sections.shift
       while current
-        case current
-        when /^Examples/
+        case type = section_type(current)
+        when :examples
           parse_examples(current, sections)
-        when /^Yields/
+        when :yields
           parse_yields(current)
-        when /^(Returns|Raises)/
-          parse_returns(current)
-        when /^Signature/
+        when :returns
+          parse_returns(current)  # also does raises
+        when :raises
+          parse_returns(current)  # also does returns
+        when :signature
           parse_signature(current, sections)
+        when Symbol
+          parse_tag(current)
         end
         current = sections.shift
       end
 
       return @parsed
+    end
+
+    #
+    #
+    def section_type(section)
+      case section
+      when /^Examples/
+        :examples
+      when /^Yields/
+        :yields
+      when /^Returns/
+        :returns
+      when /^Raises/
+        :raises
+      when /^Signature/
+        :signature
+      when /^([A-Z]*)\:\ /
+        $1.downcase.to_sym
+      else
+        nil
+      end
     end
 
     # Recognized description status.
@@ -272,7 +323,7 @@ module TomParse
     # Returns nothing.
     def parse_description(section)
       if md = /^([A-Z]\w+\:)/.match(section)
-        @status      = md[1].chomp(':')
+        @status = md[1].chomp(':')
         if TOMDOC_STATUS.include?(@status)
           @description = md.post_match.strip
         else
@@ -422,6 +473,22 @@ module TomParse
       end
 
       @signature_fields = args
+    end
+
+    # Tags are arbitrary sections designated by all cap labels and a colon.
+    #
+    # label   - String name of the tag.
+    # section - String of the tag section.
+    #
+    # Returns nothing.
+    def parse_tag(section)
+
+      md = /^([A-Z]*)\:\ /.match(section)
+
+      label = md[1]
+      text  = md.post_match
+
+      @tags[label.downcase] = text
     end
 
   end
