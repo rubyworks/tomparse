@@ -1,12 +1,13 @@
-#!mast .ruby .yardopts lib test [A-Z]*.*
-.ruby
+#!mast .index .ruby* .yardopts bin demo lib man test spec *.md *.txt
+.index
+.rubyrc
 lib/tomparse.rb
 lib/tomparse.yml
 test/helper.rb
 test/test_prefixes.rb
 test/test_signatures.rb
+test/test_tags.rb
 test/test_tomdoc.rb
-LICENSE.txt
 HISTORY.md
 README.md
-Config.rb
+LICENSE.txt
