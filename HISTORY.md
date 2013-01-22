@@ -10,6 +10,7 @@ Changes:
 
 * Fix multi-paragraph description parsing.
 * Add support for tags.
+* Fix support for option hashes. (Jonas Oberschweiber)
 
 
 ## 0.2.1 / 2012-04-30
