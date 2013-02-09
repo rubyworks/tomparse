@@ -1,11 +1,13 @@
-config 'rubytest' do |run|
+#!/usr/bin/env ruby
+
+Test.run do |run|
   run.files << 'test/test_*.rb'
 
   $:.unshift('test')
   $:.unshift('lib') 
 end
 
-config 'rubytest', :profile=>'coverage' do |run|
+Test.run 'coverage' do |run|
   run.files << 'test/test_*.rb'
 
   $:.unshift('test')
@@ -16,4 +18,5 @@ config 'rubytest', :profile=>'coverage' do |run|
     coverage_dir 'log/coverage'
   end
 end
+
 
