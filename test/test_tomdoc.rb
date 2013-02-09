@@ -14,8 +14,8 @@ testcase TomParse::TomDoc do
         # reverse - An optional Boolean indicating
         #           whether to reverse the result text or not.
         # options - Options (default: {})
-        #         :insert_spaces - Whether to insert spaces
-        #         :upcase - Convert the string to upper case
+        #           :insert_spaces - Whether to insert spaces
+        #           :upcase - Convert the string to upper case
         # blk - The block.
         #
         # Examples

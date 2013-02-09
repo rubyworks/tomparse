@@ -13,7 +13,7 @@
 
 TomParse is a TomDoc parser for Ruby. It provides no other functionality than
 to take a code comment and parse it in to a convenient object-oriented
-structure in accordance with TomDoc standard. See [TomDoc](https://github.com/mojombo/tomdoc)
+structure in accordance with the TomDoc standard. See [TomDoc](https://github.com/mojombo/tomdoc)
 for more information about the TomDoc format.
 
 
@@ -59,12 +59,59 @@ looks something like this:
       text * count
     end
 
-### Extra Features
+## Extra Features
 
-Okay, we told a little white lie in the description. TomParse does take a tiny 
-bit of liberty with the specification to offer up some additional documentation
-goodness. In particular, TomParse recoginizes paragraphs starting with an all-caps
-word, followed by a colon and a space, as special tags. Here is an example:
+Okay, we told a little white lie in the description. TomParse does take some
+liberties with the specification to offer up some additional documentation
+goodness.
+
+### Arguments
+
+The TomDoc specification is rather strict about how arguments are written --they
+have to be the second section just after the description. TomParse offers a little
+more flexability by allowing for an `Arguments` header to be used.
+
+```ruby
+  # Method to do fooey.
+  #
+  # Examples
+  #   foo(name)
+  #
+  # Arguments
+  #   name - Name of the fooey.
+  #
+  # Returns nothing.
+  def foo(name)
+    ...
+```
+
+We still recommend putting the arguments right after the desciption in most cases,
+but there are times when its reads better to put them lower, such when using a
+`Signatures` section (see below).
+
+### Options
+
+Ruby 2.0 finally introduces *keyword arguments* to the language. TomDoc's current
+support of argument options, as a secondary argument list of a Hash argument,
+doesn't take keyoword arguments into good account. To remedy this TomParse provides
+and `Options` section, and it written just like one would an `Arguments` section.
+
+```ruby
+  # Method to do fooey.
+  #
+  # Options
+  #   debug - Turn on debug mode? (default: false)
+  #
+  # Returns nothing.
+  def foo(**options)
+    ...
+```
+
+### Tags
+
+One really nice new feature of TomParse is it's ability to recoginize sections
+starting with a capitalized word followed by a colon and a space, as special *tags*.
+Here is an example:
 
 ```ruby
   # Method to do something.
@@ -77,7 +124,44 @@ word, followed by a colon and a space, as special tags. Here is an example:
 ```
 
 When this is parsed, rather then lumping the TODO line in with the description,
-the TomDoc instance will have a `tags` property containing `{'todo'=>'This is a todo note.'}`.
+the TomDoc instance will have a `tags` entry containing `['TODO', 'This is a todo note.']`.
+It is important for consumer applications to recognize this. They can either just
+add the tags back into the description when generating documentation, or handle
+them  separately. But tags don't have to occur right after the description. They
+can occur any place in the documentation.
+
+### Signatures
+
+TomParse does not support the Signature sections in exactly the same fashion as
+the TomDoc specification describes. Rather then define dynamic methods, signatures
+are used to specify alternate argument patterns, one signature per line.
+
+```ruby
+  # Method to do something.
+  #
+  # name - The name of the thing.
+  # pattern - The pattern of the thing.
+  #
+  # Signatures
+  #
+  #   dosomething(name)
+  #   dosomething(name=>pattern)
+  #
+  # Returns nothing.
+  def dosomething(*args)
+    ...
+```
+
+Technically the Signatures section can still be used to designate a dynamic method,
+but as you can see by the above example, TomParse does not support the *field* list.
+If needed just use the arguments list for these as well.
+
+This choice was made, btw, because support for signatures as defined by the spec,
+leads to very non-optimal code. It requires scanning every chunk of documentation
+for a `Signature` section in order to determine how to treat it. What is needed
+is a more universal syntax, that can be easily recognized by some clear identifier
+at the top of a comment --and one that doesn't confuse dynamic method definitions
+with the more traditional concept of method signatures.
 
 
 ## Resources
@@ -107,6 +191,7 @@ the TomDoc instance will have a `tags` property containing `{'todo'=>'This is a 
 
 * [Citron](http://rubyworks.github.com/citron) (testing)
 * [AE](http://rubyworks.github.com/ae) (testing)
+* [Fire](http://detroit.github.com/fire) (building)
 * [Detroit](http://detroit.github.com/detroit) (building)
 
 

@@ -11,7 +11,7 @@ testcase "Prefixes" do
     end
 
     test "internal?" do
-      assert @tomdoc.internal?
+      @tomdoc.assert.internal?
     end
 
     test "description" do
@@ -29,7 +29,7 @@ testcase "Prefixes" do
     end
 
     test "public?" do
-      assert @tomdoc.public?
+      @tomdoc.assert.public?
     end
 
     test "description" do

@@ -1,5 +1,26 @@
 # Release History
 
+## 0.4.0 / 2013-02-10
+
+For this release, the document parser has been substantially refactored.
+It should be both more robust and more flexible. Arguments can now
+have an optional `Arguments` heading, and the arguments list can be
+indented. A new `Options` section is supported to handle Ruby 2.0 style
+keyword options. Tag labels ony need to be capitalized. They no longer
+have to be all-caps. And lastly, the `Signature` section has been slightly
+repupposed to used for describing variant *parameter signatures*, not 
+dynamic methods. As such `signature_fields` has been deprecated.
+
+Changes:
+
+* Refactor document parser.
+* Add support for optional Arguments section header.
+* Add support Options section.
+* Modify purpose of Signatures section.
+* Deprecate signature field list.
+* Tag labels only need to be capitialized, not all-caps.
+
+
 ## 0.3.0 / 2012-01-21
 
 This release fixes a bug which prevented descriptions from having
