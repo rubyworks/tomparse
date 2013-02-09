@@ -5,6 +5,13 @@
 require 'citron'
 require 'ae'
 
+if ENV['p'] == 'cov'
+  require 'simplecov'
+  SimpleCov.start do
+    coverage_dir 'log/coverage'
+  end
+end
+
 require 'tomparse'
 
 #module TomParse

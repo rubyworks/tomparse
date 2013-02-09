@@ -1,4 +1,4 @@
-require 'helper'
+require_relative 'helper'
 
 testcase TomParse::TomDoc do
 
