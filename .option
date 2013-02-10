@@ -1,0 +1,3 @@
+rubytest
+  -Ilib
+  test/test_*.rb
