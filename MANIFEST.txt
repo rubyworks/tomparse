@@ -1,6 +1,5 @@
 #!mast .index .ruby* .yardopts bin demo lib man test spec *.md *.txt
 .index
-.rubyrc
 .yardopts
 lib/tomparse/argument.rb
 lib/tomparse/option.rb
