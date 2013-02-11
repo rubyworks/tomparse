@@ -1,3 +1,10 @@
 rubytest
   -Ilib
   test/test_*.rb
+
+[coverage]
+rubytest
+  -Ilib
+  -c simplecov
+  test/test_*.rb
+
