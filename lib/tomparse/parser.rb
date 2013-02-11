@@ -491,14 +491,13 @@ module TomParse
         next if line.strip.empty?
         indent = line.scan(/^\s*/)[0].to_s.size
 
-        if last_indent && indent > 0 && indent >= last_indent
+        if last_indent && indent >= last_indent
           args.last.description << "\r\n" + line
         else
           param, desc = line.split(" - ")
-          args << Argument.new(param.strip, desc.strip) if param && desc
+          args << Argument.new(param.strip, desc.to_s.strip) if param #&& desc
+          last_indent = indent + 1
         end
-
-        last_indent = indent
       end
 
       args.each do |arg|
