@@ -7,15 +7,18 @@ It should be both more robust and more flexible. Arguments can now
 have an optional `Arguments` heading, and the arguments list can be
 indented. A new `Options` section is supported to handle Ruby 2.0 style
 keyword options. Tag labels ony need to be capitalized. They no longer
-have to be all-caps. And lastly, the `Signature` section has been slightly
-repupposed to used for describing variant *parameter signatures*, not 
-dynamic methods. As such `signature_fields` has been deprecated.
+have to be all-caps. And lastly, the `Signature` section has been
+repurposed for describing variant *parameter signatures*, not dynamic
+methods. As such `signature_fields` has been deprecated. Yes, these
+are additions and some deviation from the original TomDoc spec, but
+when purely conceptual specs go into practice they have a tendency to 
+adapt to practical requirements.
 
 Changes:
 
 * Refactor document parser.
 * Add support for optional Arguments section header.
-* Add support Options section.
+* Add support for Options section.
 * Modify purpose of Signatures section.
 * Deprecate signature field list.
 * Tag labels only need to be capitialized, not all-caps.
