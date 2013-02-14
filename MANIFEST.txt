@@ -8,6 +8,7 @@ lib/tomparse/parser.rb
 lib/tomparse.rb
 lib/tomparse.yml
 test/helper.rb
+test/test_arguments.rb
 test/test_description.rb
 test/test_examples.rb
 test/test_prefixes.rb
