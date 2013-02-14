@@ -1,5 +1,15 @@
 # Release History
 
+## 0.4.1 / 2013-02-14
+
+This release fixes exmaple parsing.
+
+Changes:
+
+* Handle variable indention in examples.
+* Do not remove newlines for single example.
+
+
 ## 0.4.0 / 2013-02-10
 
 For this release, the document parser has been substantially refactored.
