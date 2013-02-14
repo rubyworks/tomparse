@@ -104,7 +104,6 @@ testcase TomParse::TomDoc do
   end
 
   context "handles multiple paragraph descriptions" do
-
     setup do
       @comment = TomParse::TomDoc.new %{
         # Has an initial paragraph.
@@ -122,11 +121,9 @@ testcase TomParse::TomDoc do
     test "correctly handles multiple paragraphs" do
       @comment.description.assert == "Has an initial paragraph.\n\nHas another paragraph in the description."
     end
-
   end
 
   context "handles whitespace in examples" do
-
     setup do
       @comment = TomParse::TomDoc.new %{
         # Duplicate some text an abitrary number of times.
@@ -143,7 +140,6 @@ testcase TomParse::TomDoc do
       eg = @comment.examples[0].to_s
       eg.assert == "def multiplex(str, length)\n  str * length\nend"
     end
-
   end
 
   context "without arguments or examples" do
