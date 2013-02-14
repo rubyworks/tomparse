@@ -64,5 +64,5 @@ description: ! 'TomParse provides no other functionality than to take a code com
   and parse it in to a convenient object-oriented structure in accordance
 
   with TomDoc standard.'
-version: 0.4.0
-date: '2013-02-11'
+version: 0.4.1
+date: '2013-02-14'
