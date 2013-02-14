@@ -1,8 +1,18 @@
 # Release History
 
+## 0.4.2 / 2013-02-15
+
+This release fixes description and argument parsing when
+a visibility indicator is used.
+
+Changes:
+
+* Fix desc/arguments parsing given indicator.
+
+
 ## 0.4.1 / 2013-02-14
 
-This release fixes exmaple parsing.
+This release fixes example parsing.
 
 Changes:
 
