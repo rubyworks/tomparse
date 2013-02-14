@@ -540,33 +540,28 @@ module TomParse
 
     # Parse example.
     #
-    # section  - String starting with `Examples`.
-    # sections - All sections subsequent to section.
+    # section  - String starting with `Example`.
     #
     # Returns nothing.
     def parse_example(section)
-      examples = []
-
-      # TODO: make the unidention smarter (could be more than 2 spaces)
-      section = section.sub('Example', '').gsub(/^\s{2}/,'')
-
-      @examples << section unless section.strip.empty?
+      # remove the initial `Example` line and right strip
+      section = section.sub(/.*?\n/, '')
+      example = clean_example(section)
+      @examples << example unless example.strip.empty?
     end
 
     # Parse examples.
     #
     # section  - String starting with `Examples`.
-    # sections - All sections subsequent to section.
     #
     # Returns nothing.
     def parse_examples(section)
-      #examples = []
-
-      # TODO: make the unidention smarter (could be more than 2 spaces)
-      section = section.sub('Examples', '')
-
+      # remove the initial `Examples` line and right strip
+      section = section.sub(/.*?\n/, '')
       section.split("\n\n").each do |ex|
-        @examples << ex.gsub(/^\s{2}/,'') unless ex.strip.empty?
+        next if ex.strip.empty?
+        example = clean_example(ex)
+        @examples << example
       end
     end
 
@@ -587,27 +582,6 @@ module TomParse
     def parse_returns(section)
       text = section.gsub(/\s+/, ' ').strip
       @returns << text
-
-      #returns, raises, current = [], [], []
-      #
-      #lines = section.split("\n")  
-      #lines.each do |line|
-      #  case line
-      #  when /^Returns/
-      #    returns << line
-      #    current = returns
-      #  when /^Raises/
-      #    raises << line
-      #    current = raises
-      #  when /^\s+/
-      #    current.last << line.squeeze(' ')
-      #  else
-      #    current << line  # TODO: What to do with non-compliant line?
-      #  end
-      #end
-      #
-      #@returns.concat(returns)
-      #@raises.concat(raises)
     end
 
     # Parse raises section.
@@ -692,6 +666,33 @@ module TomParse
       warn "No label?" unless label
 
       @tags << [label, desc.strip] if label
+    end
+
+  private
+
+    def clean_example(text)
+      lines = text.rstrip.lines.to_a
+      # remove blank lines from top
+      lines.shift while lines.first.strip.empty?
+      # determine the indention
+      indent = least_indent(lines)
+      # remove the indention
+      tab = " " * indent
+      lines = lines.map{ |line| line.sub(tab, '') }
+      # put the lines back together
+      lines.join
+    end
+
+    # Given a multi-line string, determine the minimum indention.
+    def least_indent(lines)
+      indents = []
+      lines.map do |line|
+        next if line.strip.empty?
+        if md = /^\ */.match(line)
+          indents << md[0].size
+        end
+      end
+      indents.min || 0
     end
 
   end
