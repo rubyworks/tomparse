@@ -365,6 +365,8 @@ module TomParse
     end
 
     # Split the documentation up into proper sections.
+    # The method works by building up a list of linenos
+    # of where each section begins.
     #
     # Returns an array section strings. [Array<String>]
     def smart_split(doc)
@@ -379,11 +381,11 @@ module TomParse
       # Keep a copy of the lines for later use.
       doc_lines = lines.dup
      
+
       # The first line may have a `Public`/`Private`/`Deprecated` marker.
-      # We need to remove that for the moment to properly check for 
-      # subsequent labeled sections.
-      #first = lines.first.dup
-      #lines.first.sub(/^[A-Z]\w+\:\s*/, '')
+      # So we just skip the first line.
+      lines.shift
+      index += 1
 
       # The description is always the first section, but it may have
       # multiple paragraphs. And the second section may be an arguments

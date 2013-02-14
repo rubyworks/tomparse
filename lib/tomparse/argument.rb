@@ -2,6 +2,8 @@ module TomParse
 
   # Encapsulate a method argument.
   #
+  # TODO: Does not yet support default parameter.
+  #
   class Argument
 
     attr_accessor :name
@@ -24,7 +26,7 @@ module TomParse
     #
     # Returns Boolean.
     def optional?
-      @description.downcase.include? 'optional'
+      @optional
     end
 
     # Parse arguments section. Arguments occur subsequent to
@@ -60,8 +62,16 @@ module TomParse
         last_indent = indent
       end
 
-      @description = desc.join
-      @options     = opts
+      # Look for `(optional)` at end of description. If found, mark argument
+      # as @optional and remove from description.
+      if md = /(\(optional\)\s*)(?:\[|\Z)/.match(desc.last)
+        @optional = true
+        desc.last[*md.offset(1)] = ''
+      end
+
+      # Join the desc lines back together and ensure no extraneous whitespace.
+      @description = desc.join.strip
+      @options = opts
     end
 
   end
