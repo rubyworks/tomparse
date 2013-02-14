@@ -2,7 +2,7 @@
 
 require 'simplecov'
 
-SimpleCov.command_name 'rubytest'
+SimpleCov.command_name 'tomparse'
 SimpleCov.start do
   coverage_dir 'log/coverage'
 end

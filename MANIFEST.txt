@@ -9,6 +9,7 @@ lib/tomparse.rb
 lib/tomparse.yml
 test/helper.rb
 test/test_description.rb
+test/test_examples.rb
 test/test_prefixes.rb
 test/test_signatures.rb
 test/test_tags.rb

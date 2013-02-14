@@ -1,7 +1,6 @@
-.fire/digest
-.yardoc
-dist
-log
-pkg
-web
-Gemfile.lock
+.fire/digest/
+.yardoc/
+log/
+pkg/
+web/
+/Gemfile.lock
