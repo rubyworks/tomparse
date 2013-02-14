@@ -64,13 +64,22 @@ module TomParse
 
       # Look for `(optional)` at end of description. If found, mark argument
       # as @optional and remove from description.
-      if md = /(\(optional\)\s*)(?:\[|\Z)/.match(desc.last)
-        @optional = true
-        desc.last[*md.offset(1)] = ''
-      end
+      #if md = /(\(optional\)\s*)(?:\[|\.\Z|\Z)/.match(desc.last)
+      #  @optional = true
+      #  desc.last[*md.offset(1)] = ''
+      #end
 
       # Join the desc lines back together and ensure no extraneous whitespace.
-      @description = desc.join.strip
+      text = desc.join.strip
+
+      # If the description contains the word "optional" the argument is taken
+      # to be optional. Note, I think this probably should be `(optional)` to
+      # prevent false positives, but the spec suggests otherwise.
+      if /\boptional\b/ =~ text
+        @optional = true
+      end
+
+      @description = text
       @options = opts
     end
 

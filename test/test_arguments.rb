@@ -79,7 +79,7 @@ testcase "Arguments" do
     end
     test "knows args description" do
       @comment.args[0].description.assert == "The String to be duplicated. And its description continues."
-      @comment.args[1].description.assert == "The Number to be duplicated. And it continues too."
+      @comment.args[1].description.assert == "The Number to be duplicated. And it continues too. (optional)"
     end
     test "knows args optionality" do
       @comment.args[0].refute.optional?
@@ -170,7 +170,7 @@ testcase "Arguments" do
     end
     test "knows args description" do
       @comment.args[0].description.assert == "The String to be duplicated. And its description continues."
-      @comment.args[1].description.assert == "The Number to be duplicated. And it continues too."
+      @comment.args[1].description.assert == "The Number to be duplicated. And it continues too. (optional)"
     end
     test "knows args optionality" do
       @comment.args[0].refute.optional?
@@ -189,7 +189,7 @@ testcase "Arguments" do
         # text - The String to be duplicated.
         #        And its description continues.
         # num  - The Number to be duplicated. 
-        #        And it continues too. (optional)
+        #        And it continues too.
         #
         # Returns the duplicated String when the count is > 1.
       }
@@ -207,7 +207,7 @@ testcase "Arguments" do
     end
     test "knows args optionality" do
       @comment.args[0].refute.optional?
-      @comment.args[1].assert.optional?
+      @comment.args[1].refute.optional?
     end
     test "know description" do
       @comment.description == "Duplicate some text an abitrary number of times."
