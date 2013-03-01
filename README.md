@@ -191,7 +191,7 @@ with the more traditional concept of method signatures.
 
 * [Citron](http://rubyworks.github.com/citron) (testing)
 * [AE](http://rubyworks.github.com/ae) (testing)
-* [Fire](http://detroit.github.com/fire) (building)
+* [Ergo](http://detroit.github.com/ergo) (building)
 * [Detroit](http://detroit.github.com/detroit) (building)
 
 
