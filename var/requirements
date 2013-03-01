@@ -1,6 +1,7 @@
 ---
-- citron  (test)
-- ae      (test)
-- detroit (build)
-- ergo    (build)
+- rubytest-cli (test)
+- citron       (test)
+- ae           (test)
+- detroit      (build)
+- ergo         (build)
 
