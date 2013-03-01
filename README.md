@@ -93,8 +93,8 @@ but there are times when its reads better to put them lower, such when using a
 
 Ruby 2.0 finally introduces *keyword arguments* to the language. TomDoc's current
 support of argument options, as a secondary argument list of a Hash argument,
-doesn't take keyoword arguments into good account. To remedy this TomParse provides
-and `Options` section, and it written just like one would an `Arguments` section.
+doesn't take keyword arguments into good account. To remedy this TomParse provides
+an `Options` section. It is written just like one would an `Arguments` section.
 
 ```ruby
   # Method to do fooey.
@@ -107,11 +107,11 @@ and `Options` section, and it written just like one would an `Arguments` section
     ...
 ```
 
-### Tags
+### Labels
 
 One really nice new feature of TomParse is it's ability to recoginize sections
-starting with a capitalized word followed by a colon and a space, as special *tags*.
-Here is an example:
+starting with a capitalized word followed by a colon and a space, as special
+section *tags* or *labels* (call them what you will). Here is an example:
 
 ```ruby
   # Method to do something.
@@ -124,7 +124,7 @@ Here is an example:
 ```
 
 When this is parsed, rather then lumping the TODO line in with the description,
-the TomDoc instance will have a `tags` entry containing `['TODO', 'This is a todo note.']`.
+the TomDoc instance will have a `tags`/`labels` entry containing `['TODO', 'This is a todo note.']`.
 It is important for consumer applications to recognize this. They can either just
 add the tags back into the description when generating documentation, or handle
 them  separately. But tags don't have to occur right after the description. They
@@ -156,7 +156,7 @@ Technically the Signatures section can still be used to designate a dynamic meth
 but as you can see by the above example, TomParse does not support the *field* list.
 If needed just use the arguments list for these as well.
 
-This choice was made, btw, because support for signatures as defined by the spec,
+This choice was made because support for signatures as defined by the spec
 leads to very non-optimal code. It requires scanning every chunk of documentation
 for a `Signature` section in order to determine how to treat it. What is needed
 is a more universal syntax, that can be easily recognized by some clear identifier
