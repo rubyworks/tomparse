@@ -151,6 +151,9 @@ module TomParse
       @parser.tags
     end
 
+    # Alternate name for *tags*.
+    alias labels tags
+
     # Check if method is public.
     #
     # Returns true if method is public.
