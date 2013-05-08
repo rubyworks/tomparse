@@ -180,7 +180,7 @@ with the more traditional concept of method signatures.
 <li class="iauthor vcard">
   <span class="nickname">trans</span>
   <span>&lt;<a class="email" href="mailto:transfire@gmail.com">transfire@gmail.com</a>&gt;</span>
-  <br/><a class="url" href="http://trans.gihub.com/">http://trans.github.com/</a>
+  <br/><a class="url" href="http://trans.github.com/">http://trans.github.com/</a>
 </li>
 </ul>
 
