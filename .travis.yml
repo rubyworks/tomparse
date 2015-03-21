@@ -2,8 +2,12 @@
 language: ruby
 script: "bundle exec rubytest -Ilib test/"
 rvm:
-  - 1.9.2
+  - 2.1.0
+  - 2.0.0
   - 1.9.3
-  - rbx-19mode
-  - jruby-19mode
-
+  - rbx
+  - jruby
+matrix:
+  allow_failures:
+    - rvm: rbx
+cache: bundler
