@@ -1,4 +1,4 @@
-#!mast .index .ruby* .yardopts bin demo lib man test spec *.md *.txt
+#!mast .index .yardopts bin demo lib man test spec *.md *.txt
 .index
 .yardopts
 lib/tomparse/argument.rb
@@ -11,11 +11,12 @@ test/helper.rb
 test/test_arguments.rb
 test/test_description.rb
 test/test_examples.rb
+test/test_options.rb
 test/test_prefixes.rb
 test/test_signatures.rb
 test/test_tags.rb
 test/test_tomdoc.rb
 test/test_yields.rb
-HISTORY.md
 README.md
+HISTORY.md
 LICENSE.txt

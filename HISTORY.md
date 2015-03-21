@@ -1,5 +1,14 @@
 # Release History
 
+## 0.4.3 / 2015-03-21
+
+This release fixes option parsing.
+
+Changes:
+
+* Fix option parsing.
+
+
 ## 0.4.2 / 2013-02-15
 
 This release fixes description and argument parsing when

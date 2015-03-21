@@ -2,34 +2,14 @@
 revision: 2013
 type: ruby
 sources:
-- var
+- INDEX.yml
 authors:
 - name: trans
   email: transfire@gmail.com
 organizations:
 - name: Rubyworks
   website: http://rubyworks.github.com
-requirements:
-- groups:
-  - test
-  development: true
-  name: rubytest-cli
-- groups:
-  - test
-  development: true
-  name: citron
-- groups:
-  - test
-  development: true
-  name: ae
-- groups:
-  - build
-  development: true
-  name: detroit
-- groups:
-  - build
-  development: true
-  name: ergo
+requirements: []
 conflicts: []
 alternatives: []
 resources:
@@ -42,16 +22,13 @@ resources:
 - type: api
   uri: http://rubydoc.info/gems/tomparse/frames
   label: API Guide
-- type: mail
-  uri: http://groups.google.com/group/rubyworks-mailinglist
-  label: Mailing List
 - type: chat
   uri: http://chat.us.freenode.net/rubyworks
   label: IRC Channel
 repositories:
 - name: upstream
   scm: git
-  uri: http://github.com/rubyworks/tomparse/tomparse.git
+  uri: https://github.com/rubyworks/tomparse/tomparse.git
 categories:
 - documentation
 copyrights:
@@ -62,14 +39,17 @@ customs: []
 paths:
   lib:
   - lib
-created: '2012-03-04'
-summary: TomDoc parser for Ruby
-title: TomParse
-version: 0.4.2
 name: tomparse
-description: ! 'TomParse provides no other functionality than to take a code comment
-
-  and parse it in to a convenient object-oriented structure in accordance
-
-  with TomDoc standard.'
-date: '2013-03-01'
+title: TomParse
+version: 0.4.3
+summary: TomDoc parser for Ruby
+description: TomParse provides no other functionality than to take a code comment
+  and parse it in to a convenient object-oriented structure in accordance with TomDoc
+  standard.
+requiremaents:
+- rubytest-cli (test)
+- citron       (test)
+- ae           (test)
+- rulebow      (build)
+created: '2012-03-04'
+date: '2015-03-21'
