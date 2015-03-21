@@ -1,0 +1,48 @@
+#!/usr/bin/env ruby
+
+# global ignore
+ignore 'pkg', 'doc', 'site', 'log'
+
+##
+# Default
+#
+ruleset :default => [:index, :manifest, :demo]
+
+ruleset :manifest do
+  desc "update manifest"
+
+  fact :need_manifest? do
+    ! system 'mast --quiet --verify'
+  end
+
+  rule :need_manifest? do
+    sh 'mast -u'
+  end
+end
+
+ruleset :test do
+  desc "run tests"
+
+  rule 'test/test_*.rb' do |files|
+    sh 'rubytest -Ilib ' + files.join(' ')
+    #require 'rubytest'
+    #Test::Runner.run do |run|
+    #  run.loadpath << 'lib'
+    #  run.files << files
+    #end
+  end
+
+  rule 'lib/**/*.rb' do |files|
+    sh 'rubytest -Ilib test/test_*.rb', 'coverage'=>'true'
+  end
+end
+
+ruleset :index do
+  desc "update .index file"
+
+  rule 'INDEX.yml' do 
+    shell "index -u INDEX.yml"
+  end
+end
+
+
