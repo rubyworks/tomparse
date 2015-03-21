@@ -1,5 +1,6 @@
 # CONTRIBUTING
 
+
 ## Build Requirements
 
 * [Rubytest](http://rubyworks.github.com/rubytest) (testing))
@@ -9,4 +10,16 @@
 * [Detroit](http://detroit.github.com/detroit) (building)
 
 The last is not being used currently, but will be once it is fixed.
+
+
+## Running Tests
+
+To run the test suite use:
+
+    $ bundle exec rubytest -Ilib test/
+
+To add test coverage use:
+
+    $ bundle exec rubytest -c simplecov -Ilib test/
+
 
