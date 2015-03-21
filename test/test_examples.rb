@@ -5,7 +5,7 @@ testcase "Examples" do
   context "plural form one example" do
     setup do
       @comment = TomParse::TomDoc.new %{
-        # Duplicate some text an abitrary number of times.
+        # Duplicate some text an arbitrary number of times.
         #
         # Examples
         #   multiplex('Tom', 4)
@@ -27,7 +27,7 @@ testcase "Examples" do
   context "plural form multiple examples" do
     setup do
       @comment = TomParse::TomDoc.new %{
-        # Duplicate some text an abitrary number of times.
+        # Duplicate some text an arbitrary number of times.
         #
         # Examples
         #   multiplex('Tom', 4)
@@ -56,7 +56,7 @@ testcase "Examples" do
   context "singular form" do
     setup do
       @comment = TomParse::TomDoc.new %{
-        # Duplicate some text an abitrary number of times.
+        # Duplicate some text an arbitrary number of times.
         #
         # Example
         #   answer = multiplex('Tom', 4)
@@ -79,7 +79,7 @@ testcase "Examples" do
   context "multiple example clauses" do
     setup do
       @comment = TomParse::TomDoc.new %{
-        # Duplicate some text an abitrary number of times.
+        # Duplicate some text an arbitrary number of times.
         #
         # Examples
         #   multiplex('Tom', 4)
@@ -105,7 +105,7 @@ testcase "Examples" do
   context "handles whitespace in examples" do
     setup do
       @comment = TomParse::TomDoc.new %{
-        # Duplicate some text an abitrary number of times.
+        # Duplicate some text an arbitrary number of times.
         #
         # Examples
         #

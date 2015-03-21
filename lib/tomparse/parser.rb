@@ -523,7 +523,7 @@ module TomParse
         next if line.strip.empty?
         indent = line.scan(/^\s*/)[0].to_s.size
 
-        if last_indent && indent > 0 && indent >= last_indent
+        if last_indent && indent > 0 && indent > last_indent
           opts.last.description << "\r\n" + line
         else
           param, desc = line.split(" - ")

@@ -4,7 +4,7 @@ testcase "Yields" do
 
   setup do  
     @comment = TomParse::TomDoc.new %{
-      # Duplicate some text an abitrary number of times.
+      # Duplicate some text an arbitrary number of times.
       #
       # Yields the Integer index of the iteration.
     }

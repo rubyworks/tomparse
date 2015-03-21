@@ -6,7 +6,7 @@ testcase TomParse::TomDoc do
 
     setup do
       @comment = TomParse::TomDoc.new %{
-        # Duplicate some text an abitrary number of times.
+        # Duplicate some text an arbitrary number of times.
         #
         # text    - The String to be duplicated.
         # count   - The Integer number of times to
@@ -38,7 +38,7 @@ testcase TomParse::TomDoc do
     end
 
     test "parses a description" do
-      @comment.description.assert == "Duplicate some text an abitrary number of times."
+      @comment.description.assert == "Duplicate some text an arbitrary number of times."
     end
 
     test "parses args" do
@@ -126,7 +126,7 @@ testcase TomParse::TomDoc do
   context "handles whitespace in examples" do
     setup do
       @comment = TomParse::TomDoc.new %{
-        # Duplicate some text an abitrary number of times.
+        # Duplicate some text an arbitrary number of times.
         #
         # Examples
         #
@@ -146,7 +146,7 @@ testcase TomParse::TomDoc do
 
     setup do
       @comment = TomParse::TomDoc.new %{
-        # Duplicate some text an abitrary number of times.
+        # Duplicate some text an arbitrary number of times.
         #
         # Returns the duplicated String.
       }
@@ -171,7 +171,7 @@ testcase TomParse::TomDoc do
 
     setup do
       @comment = TomParse::TomDoc.new %{
-        # Duplicate some text an abitrary number of times.
+        # Duplicate some text an arbitrary number of times.
         #
         # Examples
         #
@@ -196,7 +196,7 @@ testcase TomParse::TomDoc do
 
     setup do
       @comment = TomParse::TomDoc.new %{
-        Duplicate some text an abitrary number of times.
+        Duplicate some text an arbitrary number of times.
   
         Yields the Integer index of the iteration.
         
@@ -209,7 +209,7 @@ testcase TomParse::TomDoc do
     end
 
     test "can handle comments without comment marker" do
-      @comment.description.assert == "Duplicate some text an abitrary number of times."
+      @comment.description.assert == "Duplicate some text an arbitrary number of times."
     end
 
   end
