@@ -5,7 +5,7 @@ testcase "Arguments" do
   context "single line argument without heading" do
     setup do
       @comment = TomParse::TomDoc.new %{
-        # Duplicate some text an abitrary number of times.
+        # Duplicate some text an arbitrary number of times.
         #
         # text - The String to be duplicated.
         #
@@ -25,14 +25,14 @@ testcase "Arguments" do
       @comment.args.first.refute.optional?
     end
     test "know description" do
-      @comment.description == "Duplicate some text an abitrary number of times."
+      @comment.description == "Duplicate some text an arbitrary number of times."
     end
   end
 
   context "multi-line argument without heading" do
     setup do
       @comment = TomParse::TomDoc.new %{
-        # Duplicate some text an abitrary number of times.
+        # Duplicate some text an arbitrary number of times.
         #
         # text - The String to be duplicated.
         #        And its description continues.
@@ -53,14 +53,14 @@ testcase "Arguments" do
       @comment.args.first.refute.optional?
     end
     test "know description" do
-      @comment.description == "Duplicate some text an abitrary number of times."
+      @comment.description == "Duplicate some text an arbitrary number of times."
     end
   end
 
   context "multiple arguments without heading" do
     setup do
       @comment = TomParse::TomDoc.new %{
-        # Duplicate some text an abitrary number of times.
+        # Duplicate some text an arbitrary number of times.
         #
         # text - The String to be duplicated.
         #        And its description continues.
@@ -86,14 +86,14 @@ testcase "Arguments" do
       @comment.args[1].assert.optional?
     end
     test "know description" do
-      @comment.description == "Duplicate some text an abitrary number of times."
+      @comment.description == "Duplicate some text an arbitrary number of times."
     end
   end
 
   context "single line argument with heading" do
     setup do
       @comment = TomParse::TomDoc.new %{
-        # Duplicate some text an abitrary number of times.
+        # Duplicate some text an arbitrary number of times.
         #
         # Arguments
         #   text - The String to be duplicated.
@@ -114,14 +114,14 @@ testcase "Arguments" do
       @comment.args.first.refute.optional?
     end
     test "know description" do
-      @comment.description == "Duplicate some text an abitrary number of times."
+      @comment.description == "Duplicate some text an arbitrary number of times."
     end
   end
 
   context "multi-line argument with heading" do
     setup do
       @comment = TomParse::TomDoc.new %{
-        # Duplicate some text an abitrary number of times.
+        # Duplicate some text an arbitrary number of times.
         #
         # Arguments
         #   text - The String to be duplicated.
@@ -143,14 +143,14 @@ testcase "Arguments" do
       @comment.args.first.refute.optional?
     end
     test "know description" do
-      @comment.description == "Duplicate some text an abitrary number of times."
+      @comment.description == "Duplicate some text an arbitrary number of times."
     end
   end
 
   context "multiple arguments without heading" do
     setup do
       @comment = TomParse::TomDoc.new %{
-        # Duplicate some text an abitrary number of times.
+        # Duplicate some text an arbitrary number of times.
         #
         # Arguments
         #   text - The String to be duplicated.
@@ -177,14 +177,14 @@ testcase "Arguments" do
       @comment.args[1].assert.optional?
     end
     test "know description" do
-      @comment.description == "Duplicate some text an abitrary number of times."
+      @comment.description == "Duplicate some text an arbitrary number of times."
     end
   end
 
   context "when description has visibility indicator" do
     setup do
       @comment = TomParse::TomDoc.new %{
-        # Public: Duplicate some text an abitrary number of times.
+        # Public: Duplicate some text an arbitrary number of times.
         #
         # text - The String to be duplicated.
         #        And its description continues.
@@ -210,7 +210,7 @@ testcase "Arguments" do
       @comment.args[1].refute.optional?
     end
     test "know description" do
-      @comment.description == "Duplicate some text an abitrary number of times."
+      @comment.description == "Duplicate some text an arbitrary number of times."
     end
   end
 
