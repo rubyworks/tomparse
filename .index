@@ -9,7 +9,27 @@ authors:
 organizations:
 - name: Rubyworks
   website: http://rubyworks.github.com
-requirements: []
+requirements:
+- groups:
+  - test
+  development: true
+  name: rubytest
+- groups:
+  - test
+  development: true
+  name: rubytest-cli
+- groups:
+  - test
+  development: true
+  name: citron
+- groups:
+  - test
+  development: true
+  name: ae
+- groups:
+  - build
+  development: true
+  name: rulebow
 conflicts: []
 alternatives: []
 resources:
@@ -46,10 +66,5 @@ summary: TomDoc parser for Ruby
 description: TomParse provides no other functionality than to take a code comment
   and parse it in to a convenient object-oriented structure in accordance with TomDoc
   standard.
-requiremaents:
-- rubytest-cli (test)
-- citron       (test)
-- ae           (test)
-- rulebow      (build)
 created: '2012-03-04'
 date: '2015-03-21'

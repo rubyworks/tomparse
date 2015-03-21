@@ -22,7 +22,8 @@ resources:
   api:  http://rubydoc.info/gems/tomparse/frames
   chat: http://chat.us.freenode.net/rubyworks
 
-requiremaents:
+requirements:
+  - rubytest     (test)
   - rubytest-cli (test)
   - citron       (test)
   - ae           (test)
