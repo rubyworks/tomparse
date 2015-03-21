@@ -1,15 +1,12 @@
 # TomParse
 
-[Website](http://github.com/rubyworks/tomparse) /
-[Report Issue](http://github.com/rubyworks/tomparse/issues) /
-[Source Code](http://github.com/rubyworks/tomparse) /
+[Website](http://github.com/rubyworks/tomparse) -
+[Report Issue](http://github.com/rubyworks/tomparse/issues) -
+[Source Code](http://github.com/rubyworks/tomparse) -
 [Gem Page](http://rubygems.org/gems/tomparse)
-
 [![Build Status](https://secure.travis-ci.org/rubyworks/tomparse.png)](http://travis-ci.org/rubyworks/tomparse)
 [![Gem Version](https://badge.fury.io/rb/tomparse.png)](http://badge.fury.io/rb/tomparse)
 
-
-## Description
 
 TomParse is a TomDoc parser for Ruby. It provides no other functionality than
 to take a code comment and parse it in to a convenient object-oriented
@@ -17,13 +14,7 @@ structure in accordance with the TomDoc standard. See [TomDoc](https://github.co
 for more information about the TomDoc format.
 
 
-## Instruction
-
-### Installation
-
-TomParse is available as a Ruby gem.
-
-    $ gem install tomparse
+## Instructions
 
 ### Usage
 
@@ -58,6 +49,17 @@ looks something like this:
     def multiplex(text, count)
       text * count
     end
+
+### Installation
+
+TomParse is available as a Ruby gem.
+
+    $ gem install tomparse
+
+Use with Bundler by adding to your Gemfile (gems.rb file in the future).
+
+    gem "tomparse"
+
 
 ## Extra Features
 
@@ -169,7 +171,6 @@ with the more traditional concept of method signatures.
 * [Website](http://rubyworks.github.com/tomparse)
 * [Source Code](http://github.com/rubyworks/tomparse) (Github)
 * [API Reference](http://rubydoc.info/gems/tomparse/frames")
-* [Mailiing List](http://groups.google.com/group/rubyworks-mailinglist)
 * [IRC Chat](http://chat.us.freenode.net/rubyworks)
 * [Upstream Repo](http://github.com/rubyworks/tomparse/tomparse.git)
 
@@ -183,16 +184,6 @@ with the more traditional concept of method signatures.
   <br/><a class="url" href="http://trans.github.com/">http://trans.github.com/</a>
 </li>
 </ul>
-
-
-## Development 
-
-### Requirements
-
-* [Citron](http://rubyworks.github.com/citron) (testing)
-* [AE](http://rubyworks.github.com/ae) (testing)
-* [Ergo](http://detroit.github.com/ergo) (building)
-* [Detroit](http://detroit.github.com/detroit) (building)
 
 
 ## Copyright & License
