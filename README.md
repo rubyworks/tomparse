@@ -2,7 +2,7 @@
 
 [![Version](https://img.shields.io/gem/v/formatador.svg)](http://rubygems.org/gem/tomparse)
 [![Build Status](https://secure.travis-ci.org/rubyworks/tomparse.png)](http://travis-ci.org/rubyworks/tomparse)
-[![Issues](https://img.shields.io/github/issues-raw/badges/shields.svg)(https://github.com/rubyworks/tomparse/issues)
+[![Issues](https://img.shields.io/github/issues-raw/badges/shields.svg)](https://github.com/rubyworks/tomparse/issues)
 
 TomParse is a TomDoc parser for Ruby. It provides no other functionality than
 to take a code comment and parse it in to a convenient object-oriented
