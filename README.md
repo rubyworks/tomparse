@@ -121,7 +121,7 @@ section *tags* or *labels* (call them what you will). Here is an example:
     ...
 ```
 
-When this is parsed, rather then lumping the TODO line in with the description,
+When this is parsed, rather than lumping the TODO line in with the description,
 the TomDoc instance will have a `tags`/`labels` entry containing `['TODO', 'This is a todo note.']`.
 It is important for consumer applications to recognize this. They can either just
 add the tags back into the description when generating documentation, or handle
@@ -131,7 +131,7 @@ can occur any place in the documentation.
 ### Signatures
 
 TomParse does not support the Signature sections in exactly the same fashion as
-the TomDoc specification describes. Rather then define dynamic methods, signatures
+the TomDoc specification describes. Rather than define dynamic methods, signatures
 are used to specify alternate argument patterns, one signature per line.
 
 ```ruby
