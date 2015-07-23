@@ -131,7 +131,7 @@ module TomParse
     #
     # Returns Array of signatures.
     def signatures
-      @parser.signatures 
+      @parser.signatures
     end
 
     # Deprecated: A list of signature fields.

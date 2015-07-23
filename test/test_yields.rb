@@ -2,7 +2,7 @@ require_relative 'helper'
 
 testcase "Yields" do
 
-  setup do  
+  setup do
     @comment = TomParse::TomDoc.new %{
       # Duplicate some text an arbitrary number of times.
       #

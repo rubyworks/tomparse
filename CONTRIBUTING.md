@@ -3,7 +3,7 @@
 
 ## Build Requirements
 
-* [Rubytest](http://rubyworks.github.com/rubytest) (testing))
+* [Rubytest](http://rubyworks.github.com/rubytest) (testing)
 * [Citron](http://rubyworks.github.com/citron) (testing)
 * [AE](http://rubyworks.github.com/ae) (testing)
 * [Rulebow](http://detroit.github.com/rulebow) (building)

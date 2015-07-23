@@ -81,7 +81,7 @@ module TomParse
       lines = raw.split("\n")
 
       # remove remark symbol
-      if lines.all?{ |line| /^\s*#/ =~ line }   
+      if lines.all?{ |line| /^\s*#/ =~ line }
         lines = lines.map do |line|
           line =~ /^(\s*#)/ ? line.sub($1, '') : nil
         end
@@ -192,7 +192,7 @@ module TomParse
     # Returns Array of signatures.
     def signatures
       parsed {
-        @signatures 
+        @signatures
       }
     end
 
@@ -272,7 +272,7 @@ module TomParse
          desc << sections.shift
       end
       sections = [desc.join("\n\n")] + sections
-  
+
       @sections = sections.dup
 
       parse_description(sections.shift)
@@ -380,7 +380,7 @@ module TomParse
 
       # Keep a copy of the lines for later use.
       doc_lines = lines.dup
-     
+
 
       # The first line may have a `Public`/`Private`/`Deprecated` marker.
       # So we just skip the first line.
@@ -400,7 +400,7 @@ module TomParse
           break
         end
       end
-      
+
       # The rest of the the document should have identifiable section markers.
       while line = lines.shift
         index += 1
@@ -475,7 +475,7 @@ module TomParse
         end
       else
         @description = section.strip
-      end   
+      end
     end
 
     # Parse arguments section. Arguments occur subsequent to
@@ -661,7 +661,7 @@ module TomParse
     # Returns nothing.
     def parse_tag(section)
       md = /^([A-Z]\w+)\:\ /m.match(section)
- 
+
       label = md[1]
       desc  = md.post_match
 
