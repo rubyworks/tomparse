@@ -1,7 +1,7 @@
 # [TomParse](http://rubyworks.github.io//tomparse)
 
 [![Version](https://img.shields.io/gem/v/tomparse.svg)](https://rubygems.org/gems/tomparse)
-[![Build Status](https://secure.travis-ci.org/rubyworks/tomparse.png)](http://travis-ci.org/rubyworks/tomparse)
+[![Build Status](https://travis-ci.org/rubyworks/tomparse.svg?branch=master)](https://travis-ci.org/rubyworks/tomparse)
 [![Issues](https://img.shields.io/github/issues-raw/rubyworks/tomparse.svg)](https://github.com/rubyworks/tomparse/issues)
 
 TomParse is a TomDoc parser for Ruby. It provides no other functionality than
