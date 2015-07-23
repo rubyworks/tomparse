@@ -40,7 +40,7 @@ have to be all-caps. And lastly, the `Signature` section has been
 repurposed for describing variant *parameter signatures*, not dynamic
 methods. As such `signature_fields` has been deprecated. Yes, these
 are additions and some deviation from the original TomDoc spec, but
-when purely conceptual specs go into practice they have a tendency to 
+when purely conceptual specs go into practice they have a tendency to
 adapt to practical requirements.
 
 Changes:
